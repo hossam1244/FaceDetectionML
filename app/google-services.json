@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1013739706648",
+    "firebase_url": "https://mlkit-1f2ca.firebaseio.com",
+    "project_id": "mlkit-1f2ca",
+    "storage_bucket": "mlkit-1f2ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013739706648:android:a2631a7a5a3317d3",
+        "android_client_info": {
+          "package_name": "com.example.authenteqfacedetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013739706648-d3tiasu23gnmrk2o63abhtumo0b8oot4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKdw6oNoVizGB63IzBY4BSTbX8xC7xL1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013739706648-d3tiasu23gnmrk2o63abhtumo0b8oot4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

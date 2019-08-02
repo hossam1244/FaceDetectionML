@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.authenteqfacedetection.view.selfiePreview.SelfieActivityViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:layout_editor_absoluteY="81dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.authenteqfacedetection.utils.faceDetectionUtil.common.CameraSourcePreview
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.authenteqfacedetection.utils.faceDetectionUtil.common.GraphicOverlay
+                android:id="@+id/barcode_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.example.authenteqfacedetection.utils.faceDetectionUtil.common.CameraSourcePreview>>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_capture"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/capture_overlay_size"
+            android:background="@color/cv_capture_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/btn_capture"
+                android:layout_width="@dimen/capture_button_size"
+                android:layout_height="@dimen/capture_button_size"
+                android:layout_centerInParent="true"
+                android:background="@drawable/button_effect"
+                android:onClick="@{ () -> viewModel.onBtnCaptureClicked() }"
+                android:enabled="false"
+                  />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
