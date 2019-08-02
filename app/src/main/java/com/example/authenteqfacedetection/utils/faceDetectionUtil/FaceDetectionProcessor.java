@@ -45,23 +45,12 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
     FaceDetectionResultListener faceDetectionResultListener;
 
 
-    public FaceDetectionProcessor() {
-        FirebaseVisionFaceDetectorOptions options =
-                new FirebaseVisionFaceDetectorOptions.Builder()
-                        .setClassificationMode(FirebaseVisionFaceDetectorOptions.ACCURATE)
-                        .setContourMode(FirebaseVisionFaceDetectorOptions.ALL_CONTOURS)
-                        .build();
-
-        detector = FirebaseVision.getInstance().getVisionFaceDetector(options);
-    }
 
     public FaceDetectionProcessor(FirebaseVisionFaceDetector detector) {
         this.detector=detector;
     }
 
-    public FaceDetectionResultListener getFaceDetectionResultListener() {
-        return faceDetectionResultListener;
-    }
+
 
     public void setFaceDetectionResultListener(FaceDetectionResultListener faceDetectionResultListener) {
         this.faceDetectionResultListener = faceDetectionResultListener;

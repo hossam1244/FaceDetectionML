@@ -32,12 +32,6 @@ public class FaceCenterCrop {
     FaceCenterCropListener faceCenterCropListener;
 
 
-    public FaceCenterCrop(int width, int height) {
-        this.width = width;
-        this.height = height;
-        init();
-    }
-
     public FaceCenterCrop(Context context, int width, int height, int unit) {
         init();
         if (unit == PIXEL) {
@@ -122,58 +116,6 @@ public class FaceCenterCrop {
     }
 
 
-    /**
-     * Calculates a point (focus point) in the bitmap, around which cropping needs to be performed.
-     *
-     * @param bitmap                 Bitmap in which faces are to be detected.
-     * @param faceCenterCropListener To send the updated bitmap with center point.
-     */
-    public void detectFace(Bitmap bitmap, FaceCenterCropListener faceCenterCropListener) {
-
-        Log.d("Time log", "Detect face starts");
-
-        firebaseVisionImage = FirebaseVisionImage.fromBitmap(bitmap);
-
-        Log.d("Time log", "FBVI convertion done");
-
-        Task<List<FirebaseVisionFace>> result =
-                detector.detectInImage(firebaseVisionImage)
-                        .addOnSuccessListener(
-                                faces -> {
-                                    // Task completed successfully
-
-                                    Log.d("Time log", "Face detection done");
-
-                                    Log.d(TAG, "detectFace: " + faces.size());
-
-                                    final int totalFaces = faces.size();
-                                    if (totalFaces > 0) {
-                                        transform(bitmap, getCenterPoint(faces), faceCenterCropListener);
-                                    } else
-                                        faceCenterCropListener.onFailure();
-
-
-                                })
-                        .addOnFailureListener(
-                                e -> {
-                                    // Task failed with an exception
-                                    // ...
-                                    faceCenterCropListener.onFailure();
-                                });
-
-
-    }
-
-    public void detectFace(Bitmap bitmap, List<FirebaseVisionFace> faces, FaceCenterCropListener faceCenterCropListener) {
-
-        final int totalFaces = faces.size();
-        if (totalFaces > 0) {
-            transform(bitmap, getCenterPoint(faces), faceCenterCropListener);
-        } else
-            faceCenterCropListener.onFailure();
-
-    }
-
 
     public PointF getCenterPoint(List<FirebaseVisionFace> faces) {
         PointF centerOfAllFaces = new PointF();
@@ -235,17 +177,6 @@ public class FaceCenterCrop {
         return (int) px;
     }
 
-    public static int convertPixelsToDp(float px, Context context) {
-        return (int) (px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT));
-    }
-
-    public FaceCenterCropListener getFaceCenterCropListener() {
-        return faceCenterCropListener;
-    }
-
-    public void setFaceCenterCropListener(FaceCenterCropListener faceCenterCropListener) {
-        this.faceCenterCropListener = faceCenterCropListener;
-    }
 
     public interface FaceCenterCropListener {
         void onTransform(Bitmap updatedBitmap);

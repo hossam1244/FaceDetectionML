@@ -66,7 +66,6 @@ public class CropFaceActivity extends BaseActivity<ActivityCropFaceBinding, Crop
         activityCropFaceBinding = getViewDataBinding();
         cropFaceViewModel.setNavigator(this);
 
-
         imageutils = new Imageutils(this);
         imageutils.setImageAttachment_callBack(getImageAttachmentCallback());
 
@@ -83,7 +82,6 @@ public class CropFaceActivity extends BaseActivity<ActivityCropFaceBinding, Crop
                 // Update the UI, in this case, a TextView.
                 //nameTextView.setText(newName);
                 activityCropFaceBinding.ivImage.setImageBitmap(file);
-
             }
         };
         // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
