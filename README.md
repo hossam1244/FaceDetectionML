@@ -1,6 +1,6 @@
 # FaceDetectionML
  
-  ### Seflie face detector app using Firebase MLKit with 2 screens first screen for taking a selfie the second screen for cropping face from taken picture.
+  ### Seflie face detector app using Firebase MLKit with 2 screens first screen for taking a selfie the second screen for showing the cropping face from taken picture.
   
 ### The app has following packages:
    ##### view: View classes along with their corresponding ViewModel.    
