@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1013739706648:android:a2631a7a5a3317d3",
+        "mobilesdk_app_id": "1:1013739706648:android:fbddb45677d08c4a",
         "android_client_info": {
-          "package_name": "com.example.authenteqfacedetection"
+          "package_name": "com.example.faceDetection"
         }
       },
       "oauth_client": [

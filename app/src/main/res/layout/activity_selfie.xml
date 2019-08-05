@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.authenteqfacedetection.view.selfiePreview.SelfieActivityViewModel" />
+            type="com.example.faceDetection.view.selfiePreview.SelfieActivityViewModel" />
 
     </data>
 
@@ -20,17 +20,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.authenteqfacedetection.utils.faceDetectionUtil.common.CameraSourcePreview
+        <com.example.faceDetection.utils.faceDetectionUtil.common.CameraSourcePreview
             android:id="@+id/preview"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.example.authenteqfacedetection.utils.faceDetectionUtil.common.GraphicOverlay
+            <com.example.faceDetection.utils.faceDetectionUtil.common.GraphicOverlay
                 android:id="@+id/barcode_overlay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </com.example.authenteqfacedetection.utils.faceDetectionUtil.common.CameraSourcePreview>>
+        </com.example.faceDetection.utils.faceDetectionUtil.common.CameraSourcePreview>>
 
 
         <RelativeLayout

@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.authenteqfacedetection.view.cropFace.CropFaceViewModel" />
+            type="com.example.faceDetection.view.cropFace.CropFaceViewModel" />
 
         <variable
             name="imageUrl"
